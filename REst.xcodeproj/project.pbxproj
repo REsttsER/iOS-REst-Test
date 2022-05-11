@@ -17,6 +17,7 @@
 		F2C0A97B282BE1FE0058D45D /* REstTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C0A97A282BE1FE0058D45D /* REstTests.swift */; };
 		F2C0A985282BE1FE0058D45D /* REstUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C0A984282BE1FE0058D45D /* REstUITests.swift */; };
 		F2C0A987282BE1FE0058D45D /* REstUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C0A986282BE1FE0058D45D /* REstUITestsLaunchTests.swift */; };
+		F2C0A994282BF0640058D45D /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C0A993282BF0640058D45D /* StartViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		F2C0A980282BE1FE0058D45D /* REstUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = REstUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2C0A984282BE1FE0058D45D /* REstUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = REstUITests.swift; sourceTree = "<group>"; };
 		F2C0A986282BE1FE0058D45D /* REstUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = REstUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		F2C0A993282BF0640058D45D /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 				F2C0A96E282BE1FD0058D45D /* LaunchScreen.storyboard */,
 				F2C0A971282BE1FD0058D45D /* Info.plist */,
 				F2C0A969282BE1FB0058D45D /* REst.xcdatamodeld */,
+				F2C0A993282BF0640058D45D /* StartViewController.swift */,
 			);
 			path = REst;
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2C0A994282BF0640058D45D /* StartViewController.swift in Sources */,
 				F2C0A965282BE1FB0058D45D /* ViewController.swift in Sources */,
 				F2C0A961282BE1FB0058D45D /* AppDelegate.swift in Sources */,
 				F2C0A963282BE1FB0058D45D /* SceneDelegate.swift in Sources */,
