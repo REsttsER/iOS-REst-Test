@@ -18,6 +18,8 @@ class StartViewController: ViewController {
     @IBOutlet weak var runButton: modeButton!
     @IBOutlet weak var accountButton: UIButton!
     
+    var trackData: TrackData = TrackData()
+    
     // locationManager 생성
     lazy var locationManager: CLLocationManager = {
         let manager = CLLocationManager()
@@ -26,6 +28,8 @@ class StartViewController: ViewController {
         manager.delegate = self
         return manager
     }()
+    
+    var previousCoordinate: CLLocationCoordinate2D?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,6 +49,8 @@ class StartViewController: ViewController {
         jogButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 22)
         runButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 22)
         accountButton.titleLabel?.text = ""
+        
+        self.mapView.delegate = self
     }
     
     // view가 화면에서 사라질 때 locationManager가 위치 업데이트를 중단하도록 하기
@@ -91,5 +97,40 @@ extension StartViewController: CLLocationManagerDelegate {
         default:
             print("GPS: Default")
         }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let location = locations.last
+        else { return }
+        let latitude = location.coordinate.latitude
+        let longtitude = location.coordinate.longitude
+        
+        if let previousCoordinate = self.previousCoordinate {
+            var points: [CLLocationCoordinate2D] = []
+            let point1 = CLLocationCoordinate2DMake(previousCoordinate.latitude, previousCoordinate.longitude)
+            let point2 = CLLocationCoordinate2DMake(latitude, longtitude)
+            points.append(point1)
+            points.append(point2)
+            
+            let lineDraw = MKPolyline(coordinates: points, count: points.count)
+            self.mapView.addOverlay(lineDraw) // 를 하면 func mapView(...rendererFor overlay: MKOverlay...) -> MKOverlayRenderer 함수가 호출됨.
+        }
+    }
+}
+
+extension StartViewController: MKMapViewDelegate {
+    // polyline 객체가 들어왔을 때 그것을 그리는 메서드
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        guard let polyLine = overlay as? MKPolyline
+        else {
+            print("can't draw polyline")
+            return MKOverlayRenderer()
+        }
+        
+        let renderer = MKPolylineRenderer(polyline: polyLine)
+        renderer.strokeColor = .orange
+        renderer.lineWidth = 5.0
+        renderer.alpha = 1.0
+        return renderer
     }
 }
