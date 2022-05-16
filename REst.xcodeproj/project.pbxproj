@@ -13,6 +13,9 @@
 		67E296B828321495000718A2 /* TrackData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E296B728321495000718A2 /* TrackData.swift */; };
 		67E296BA2832158A000718A2 /* Trace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E296B92832158A000718A2 /* Trace.swift */; };
 		67E296BD28321D77000718A2 /* RealmHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E296BC28321D77000718A2 /* RealmHelper.swift */; };
+		67E296C12832278C000718A2 /* ActiveListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E296C02832278C000718A2 /* ActiveListViewController.swift */; };
+		67E296C32832380A000718A2 /* ActiveInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E296C22832380A000718A2 /* ActiveInfoTableViewCell.swift */; };
+		67E296C528323A3B000718A2 /* ShowActiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E296C428323A3B000718A2 /* ShowActiveViewController.swift */; };
 		C95AEEBA4C7B4B0B02822664 /* Pods_REst.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8AF61BC210ECC8B85115D01 /* Pods_REst.framework */; };
 		F2C0A961282BE1FB0058D45D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C0A960282BE1FB0058D45D /* AppDelegate.swift */; };
 		F2C0A963282BE1FB0058D45D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C0A962282BE1FB0058D45D /* SceneDelegate.swift */; };
@@ -52,6 +55,9 @@
 		67E296B728321495000718A2 /* TrackData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackData.swift; sourceTree = "<group>"; };
 		67E296B92832158A000718A2 /* Trace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trace.swift; sourceTree = "<group>"; };
 		67E296BC28321D77000718A2 /* RealmHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmHelper.swift; sourceTree = "<group>"; };
+		67E296C02832278C000718A2 /* ActiveListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveListViewController.swift; sourceTree = "<group>"; };
+		67E296C22832380A000718A2 /* ActiveInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveInfoTableViewCell.swift; sourceTree = "<group>"; };
+		67E296C428323A3B000718A2 /* ShowActiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowActiveViewController.swift; sourceTree = "<group>"; };
 		799E2C6D12B5962B9D31221E /* Pods-REstTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-REstTests.release.xcconfig"; path = "Target Support Files/Pods-REstTests/Pods-REstTests.release.xcconfig"; sourceTree = "<group>"; };
 		B280CD39195EA543ED53E9C8 /* Pods-REst-REstUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-REst-REstUITests.release.xcconfig"; path = "Target Support Files/Pods-REst-REstUITests/Pods-REst-REstUITests.release.xcconfig"; sourceTree = "<group>"; };
 		D8AF61BC210ECC8B85115D01 /* Pods_REst.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_REst.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -171,12 +177,15 @@
 				67E296B62831D79C000718A2 /* View */,
 				F2C0A960282BE1FB0058D45D /* AppDelegate.swift */,
 				F2C0A962282BE1FB0058D45D /* SceneDelegate.swift */,
+				67E296C02832278C000718A2 /* ActiveListViewController.swift */,
 				F2C0A993282BF0640058D45D /* StartViewController.swift */,
 				F2C0A966282BE1FB0058D45D /* Main.storyboard */,
 				F2C0A96C282BE1FD0058D45D /* Assets.xcassets */,
 				F2C0A96E282BE1FD0058D45D /* LaunchScreen.storyboard */,
 				F2C0A971282BE1FD0058D45D /* Info.plist */,
 				F2C0A969282BE1FB0058D45D /* REst.xcdatamodeld */,
+				67E296C22832380A000718A2 /* ActiveInfoTableViewCell.swift */,
+				67E296C428323A3B000718A2 /* ShowActiveViewController.swift */,
 			);
 			path = REst;
 			sourceTree = "<group>";
@@ -437,10 +446,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				67E296C12832278C000718A2 /* ActiveListViewController.swift in Sources */,
+				67E296C32832380A000718A2 /* ActiveInfoTableViewCell.swift in Sources */,
 				F2C0A994282BF0640058D45D /* StartViewController.swift in Sources */,
 				F2C0A961282BE1FB0058D45D /* AppDelegate.swift in Sources */,
 				67E296B828321495000718A2 /* TrackData.swift in Sources */,
 				67E296BD28321D77000718A2 /* RealmHelper.swift in Sources */,
+				67E296C528323A3B000718A2 /* ShowActiveViewController.swift in Sources */,
 				F2C0A963282BE1FB0058D45D /* SceneDelegate.swift in Sources */,
 				67E296BA2832158A000718A2 /* Trace.swift in Sources */,
 				67E296B52831D797000718A2 /* modeButton.swift in Sources */,

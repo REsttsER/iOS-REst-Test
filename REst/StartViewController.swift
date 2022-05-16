@@ -10,7 +10,7 @@ import CoreLocation
 import MapKit
 import RealmSwift
 
-class StartViewController: ViewController {
+class StartViewController: UIViewController {
     
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var restButton: modeButton!
