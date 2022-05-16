@@ -13,6 +13,9 @@ import RealmSwift
 class StartViewController: ViewController {
     
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var restButton: modeButton!
+    @IBOutlet weak var jogButton: modeButton!
+    @IBOutlet weak var runButton: modeButton!
     
     // locationManager 생성
     lazy var locationManager: CLLocationManager = {
@@ -36,6 +39,10 @@ class StartViewController: ViewController {
         self.mapView.setUserTrackingMode(.follow, animated: true)
         
         self.mapView.isZoomEnabled = true
+        
+        restButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 22)
+        jogButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 22)
+        runButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 22)
 
     }
     

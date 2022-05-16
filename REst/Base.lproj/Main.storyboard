@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="P72-dW-53O">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -19,27 +20,36 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Yvl-jU-QOI">
                                 <rect key="frame" x="0.0" y="44" width="414" height="769"/>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0hS-rj-uYu">
-                                <rect key="frame" x="68" y="528" width="49" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0hS-rj-uYu" customClass="modeButton" customModule="REst" customModuleProvider="target">
+                                <rect key="frame" x="20" y="548" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="WEO-4I-hhg"/>
+                                    <constraint firstAttribute="height" constant="100" id="e1Q-Et-KiA"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="휴식"/>
                                 <connections>
                                     <action selector="restButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zbk-qa-bEA"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bD8-DN-dBa">
-                                <rect key="frame" x="183" y="528" width="49" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bD8-DN-dBa" customClass="modeButton" customModule="REst" customModuleProvider="target">
+                                <rect key="frame" x="157" y="548" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="1AA-uJ-td4"/>
+                                    <constraint firstAttribute="height" constant="100" id="AjT-6B-Ag1"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="조깅"/>
                                 <connections>
                                     <action selector="joggingButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1FS-iP-c1d"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QhO-67-4Hz">
-                                <rect key="frame" x="308" y="528" width="49" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QhO-67-4Hz" customClass="modeButton" customModule="REst" customModuleProvider="target">
+                                <rect key="frame" x="294" y="548" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="8kz-6W-RhJ"/>
+                                    <constraint firstAttribute="width" constant="100" id="ag6-pn-Jh0"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="러닝"/>
                                 <connections>
@@ -53,12 +63,21 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Yvl-jU-QOI" secondAttribute="trailing" id="1cU-A3-DcJ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Yvl-jU-QOI" secondAttribute="bottom" id="2Ha-8E-WER"/>
                             <constraint firstItem="Yvl-jU-QOI" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="3Z5-Tb-SZ5"/>
+                            <constraint firstItem="bD8-DN-dBa" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="150" id="7B7-AH-EXr"/>
+                            <constraint firstItem="QhO-67-4Hz" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="150" id="I4h-O0-dgA"/>
+                            <constraint firstItem="0hS-rj-uYu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="L1B-XE-zAN"/>
                             <constraint firstItem="Yvl-jU-QOI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ZZ5-vP-Iec"/>
+                            <constraint firstItem="bD8-DN-dBa" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jJS-Dc-cQq"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="QhO-67-4Hz" secondAttribute="trailing" constant="20" id="kBp-5o-O9E"/>
+                            <constraint firstItem="0hS-rj-uYu" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="150" id="sBd-hX-8NK"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="qVd-tB-dLq"/>
                     <connections>
+                        <outlet property="jogButton" destination="bD8-DN-dBa" id="fb7-TK-v91"/>
                         <outlet property="mapView" destination="Yvl-jU-QOI" id="Ltf-k7-7Cb"/>
+                        <outlet property="restButton" destination="0hS-rj-uYu" id="EfZ-4h-rxM"/>
+                        <outlet property="runButton" destination="QhO-67-4Hz" id="c4z-l9-G68"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
