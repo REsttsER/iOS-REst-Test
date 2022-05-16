@@ -16,6 +16,7 @@ class StartViewController: ViewController {
     @IBOutlet weak var restButton: modeButton!
     @IBOutlet weak var jogButton: modeButton!
     @IBOutlet weak var runButton: modeButton!
+    @IBOutlet weak var accountButton: UIButton!
     
     // locationManager 생성
     lazy var locationManager: CLLocationManager = {
@@ -43,7 +44,7 @@ class StartViewController: ViewController {
         restButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 22)
         jogButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 22)
         runButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 22)
-
+        accountButton.titleLabel?.text = ""
     }
     
     // view가 화면에서 사라질 때 locationManager가 위치 업데이트를 중단하도록 하기
@@ -65,6 +66,9 @@ class StartViewController: ViewController {
     
     
     @IBAction func runningButton(_ sender: UIButton) {
+    }
+    
+    @IBAction func accountButton(_ sender: UIButton) {
     }
 }
 

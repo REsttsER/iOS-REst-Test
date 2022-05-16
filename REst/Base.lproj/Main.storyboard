@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -56,6 +57,17 @@
                                     <action selector="runningButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="I3t-Z4-ND0"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qZ0-Ml-6Z1">
+                                <rect key="frame" x="339.5" y="64" width="54.5" height="38"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <imageReference key="image" image="person.circle" catalog="system" symbolScale="large"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="20"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="accountButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UPd-d3-4Ln"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -66,14 +78,17 @@
                             <constraint firstItem="bD8-DN-dBa" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="150" id="7B7-AH-EXr"/>
                             <constraint firstItem="QhO-67-4Hz" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="150" id="I4h-O0-dgA"/>
                             <constraint firstItem="0hS-rj-uYu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="L1B-XE-zAN"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qZ0-Ml-6Z1" secondAttribute="trailing" constant="20" id="RkZ-o6-fkH"/>
                             <constraint firstItem="Yvl-jU-QOI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ZZ5-vP-Iec"/>
                             <constraint firstItem="bD8-DN-dBa" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jJS-Dc-cQq"/>
+                            <constraint firstItem="qZ0-Ml-6Z1" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="jzb-of-97V"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="QhO-67-4Hz" secondAttribute="trailing" constant="20" id="kBp-5o-O9E"/>
                             <constraint firstItem="0hS-rj-uYu" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="150" id="sBd-hX-8NK"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="REst" image="figure.walk" catalog="system" id="qVd-tB-dLq"/>
                     <connections>
+                        <outlet property="accountButton" destination="qZ0-Ml-6Z1" id="cOs-Xl-J6B"/>
                         <outlet property="jogButton" destination="bD8-DN-dBa" id="fb7-TK-v91"/>
                         <outlet property="mapView" destination="Yvl-jU-QOI" id="Ltf-k7-7Cb"/>
                         <outlet property="restButton" destination="0hS-rj-uYu" id="EfZ-4h-rxM"/>
@@ -105,6 +120,7 @@
     </scenes>
     <resources>
         <image name="figure.walk" catalog="system" width="95" height="128"/>
+        <image name="person.circle" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
