@@ -16,8 +16,9 @@ class StartViewController: UIViewController {
     @IBOutlet weak var restButton: modeButton!
     @IBOutlet weak var jogButton: modeButton!
     @IBOutlet weak var runButton: modeButton!
+    @IBOutlet weak var stopButton: modeButton!
     @IBOutlet weak var accountButton: UIButton!
-    
+
     var trackData: TrackData = TrackData()
     
     // locationManager 생성
@@ -42,15 +43,17 @@ class StartViewController: UIViewController {
         self.mapView.showsUserLocation = true
         // 현재 내 위치 기준으로 지도를 움직임
         self.mapView.setUserTrackingMode(.follow, animated: true)
-        
         self.mapView.isZoomEnabled = true
-        
-        restButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 22)
-        jogButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 22)
-        runButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 22)
-        accountButton.titleLabel?.text = ""
-        
         self.mapView.delegate = self
+        
+        self.trackData.date = Date()
+        
+        self.restButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 22)
+        self.jogButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 22)
+        self.runButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 22)
+        
+        self.accountButton.setTitle("", for: .normal)
+        self.stopButton.setTitle("", for: .normal)
     }
     
     // view가 화면에서 사라질 때 locationManager가 위치 업데이트를 중단하도록 하기
@@ -64,14 +67,40 @@ class StartViewController: UIViewController {
     }
     
     @IBAction func restButton(_ sender: UIButton) {
+        buttonHidden(true)
+        self.stopButton.isHidden = false
+        
+        // 지도에 내 위치 표시
+        self.mapView.showsUserLocation = true
+        // 현재 내 위치 기준으로 지도를 움직임
+        self.mapView.setUserTrackingMode(.follow, animated: true)
     }
-    
     
     @IBAction func joggingButton(_ sender: UIButton) {
+        buttonHidden(true)
+        self.stopButton.isHidden = false
     }
     
-    
     @IBAction func runningButton(_ sender: UIButton) {
+        buttonHidden(true)
+        self.stopButton.isHidden = false
+    }
+    
+    @IBAction func stopButton(_ sender: UIButton) {
+        buttonHidden(false)
+        self.stopButton.isHidden = true
+        
+        locationManager.stopUpdatingLocation()
+        RealmHelper.shared.create(trackData)
+        DispatchQueue.main.async {
+            self.dismiss(animated: true, completion: nil)
+        }
+    }
+    
+    func buttonHidden(_ h: Bool) {
+        self.restButton.isHidden = h
+        self.jogButton.isHidden = h
+        self.runButton.isHidden = h
     }
     
     @IBAction func accountButton(_ sender: UIButton) {
@@ -115,6 +144,11 @@ extension StartViewController: CLLocationManagerDelegate {
             let lineDraw = MKPolyline(coordinates: points, count: points.count)
             self.mapView.addOverlay(lineDraw) // 를 하면 func mapView(...rendererFor overlay: MKOverlay...) -> MKOverlayRenderer 함수가 호출됨.
         }
+        
+        self.previousCoordinate = location.coordinate
+        
+        let newTrace = Trace(latitude: latitude, longtitude: longtitude)
+        self.trackData.appendTrace(trace: newTrace)
     }
 }
 

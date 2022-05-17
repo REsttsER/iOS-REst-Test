@@ -58,7 +58,11 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qZ0-Ml-6Z1">
-                                <rect key="frame" x="349.5" y="54" width="54.5" height="38"/>
+                                <rect key="frame" x="366" y="54" width="38" height="38"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="38" id="A69-G2-DaQ"/>
+                                    <constraint firstAttribute="height" constant="38" id="AEb-xD-gna"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain">
                                     <imageReference key="image" image="person.circle" catalog="system" symbolScale="large"/>
@@ -68,14 +72,30 @@
                                     <action selector="accountButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UPd-d3-4Ln"/>
                                 </connections>
                             </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eoT-iU-Nig" customClass="modeButton" customModule="REst" customModuleProvider="target">
+                                <rect key="frame" x="157" y="548" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="2Ob-9e-z8Q"/>
+                                    <constraint firstAttribute="width" constant="100" id="Ff8-Jp-s7z"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" image="pause.fill" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="50"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="stopButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Law-5X-wIe"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Yvl-jU-QOI" secondAttribute="trailing" id="1cU-A3-DcJ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Yvl-jU-QOI" secondAttribute="bottom" id="2Ha-8E-WER"/>
+                            <constraint firstItem="eoT-iU-Nig" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3TZ-Y6-rjY"/>
                             <constraint firstItem="Yvl-jU-QOI" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="3Z5-Tb-SZ5"/>
                             <constraint firstItem="bD8-DN-dBa" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="150" id="7B7-AH-EXr"/>
+                            <constraint firstItem="eoT-iU-Nig" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="150" id="HZ4-DF-bnJ"/>
                             <constraint firstItem="QhO-67-4Hz" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="150" id="I4h-O0-dgA"/>
                             <constraint firstItem="0hS-rj-uYu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="L1B-XE-zAN"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qZ0-Ml-6Z1" secondAttribute="trailing" constant="10" id="RkZ-o6-fkH"/>
@@ -93,13 +113,14 @@
                         <outlet property="mapView" destination="Yvl-jU-QOI" id="Ltf-k7-7Cb"/>
                         <outlet property="restButton" destination="0hS-rj-uYu" id="EfZ-4h-rxM"/>
                         <outlet property="runButton" destination="QhO-67-4Hz" id="c4z-l9-G68"/>
+                        <outlet property="stopButton" destination="eoT-iU-Nig" id="o1L-TX-UBm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="939.13043478260875" y="67.633928571428569"/>
         </scene>
-        <!--Active-->
+        <!--Active List View Controller-->
         <scene sceneID="bLT-ge-lSh">
             <objects>
                 <viewController id="yFe-9P-roq" customClass="ActiveListViewController" customModule="REst" customModuleProvider="target" sceneMemberID="viewController">
@@ -108,10 +129,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="rci-S9-c2x">
-                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="activeInfoTableViewCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="SQv-Fh-yCx" customClass="ActiveInfoTableViewCell" customModule="REst" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="activeInfoTableViewCell" id="SQv-Fh-yCx" customClass="ActiveInfoTableViewCell" customModule="REst" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SQv-Fh-yCx" id="DIR-NR-Q22">
@@ -143,19 +164,19 @@
                             <constraint firstItem="rci-S9-c2x" firstAttribute="top" secondItem="XSC-0i-Gux" secondAttribute="top" id="xh9-uB-RZ1"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Active" image="chart.bar.fill" catalog="system" id="PyJ-W8-ydM"/>
+                    <navigationItem key="navigationItem" id="fj1-PU-cuN"/>
                     <connections>
                         <outlet property="tableView" destination="rci-S9-c2x" id="MBh-u8-6mC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XjD-k2-twc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="28.985507246376812" y="780.80357142857144"/>
+            <point key="canvasLocation" x="939.13043478260875" y="780.80357142857144"/>
         </scene>
         <!--Show Active View Controller-->
         <scene sceneID="oPr-aL-Owm">
             <objects>
-                <viewController storyboardIdentifier="showActiveViewController" id="kCt-w2-xhu" customClass="ShowActiveViewController" customModule="REst" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="showActiveViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="kCt-w2-xhu" customClass="ShowActiveViewController" customModule="REst" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="O1z-mh-d4c">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -173,10 +194,13 @@
                             <constraint firstItem="yWU-OF-zfy" firstAttribute="bottom" secondItem="kAc-wr-Kls" secondAttribute="bottom" id="wfI-SN-vmA"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="kAc-wr-Kls" id="hUw-pL-iQi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hNr-Zi-3kw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="939" y="781"/>
+            <point key="canvasLocation" x="1847.826086956522" y="780.80357142857144"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="6A1-Ly-rna">
@@ -190,17 +214,37 @@
                     </tabBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="lrf-Fg-APJ"/>
-                        <segue destination="yFe-9P-roq" kind="relationship" relationship="viewControllers" id="28K-Ps-Bnp"/>
+                        <segue destination="frq-xY-nFY" kind="relationship" relationship="viewControllers" id="28K-Ps-Bnp"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iEZ-wq-MoS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="28.985507246376812" y="67.633928571428569"/>
         </scene>
+        <!--Active-->
+        <scene sceneID="lKM-zZ-JZX">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="frq-xY-nFY" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Active" image="chart.bar.fill" catalog="system" id="PyJ-W8-ydM"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="tip-H1-mEk">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="yFe-9P-roq" kind="relationship" relationship="rootViewController" id="Qc3-AI-tma"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nf5-AR-P0a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="28.985507246376812" y="780.80357142857144"/>
+        </scene>
     </scenes>
     <resources>
         <image name="chart.bar.fill" catalog="system" width="128" height="92"/>
         <image name="figure.walk" catalog="system" width="95" height="128"/>
+        <image name="pause.fill" catalog="system" width="116" height="128"/>
         <image name="person.circle" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

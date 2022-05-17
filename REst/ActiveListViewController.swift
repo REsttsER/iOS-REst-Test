@@ -51,7 +51,7 @@ extension ActiveListViewController: UITableViewDelegate {
         let traces: List<Trace> = trackData.traces
         
         let mainStoryBoard = UIStoryboard.init(name: "Main", bundle: nil)
-        let nextViewController = mainStoryBoard.instantiateViewController(withIdentifier: "showActiveViewContoller") as! ShowActiveViewController
+        let nextViewController = mainStoryBoard.instantiateViewController(withIdentifier: "showActiveViewController") as! ShowActiveViewController
         
         nextViewController.traces = traces
         _ = nextViewController.view
